@@ -10,19 +10,11 @@
   --season-hero-gradient: var(--season-spring-gradient);
 }
 
-[data-season="spring"] .hero__bg {
-  background: url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1920&q=80&fit=crop') center/cover no-repeat;
-}
-
 /* Summer Theme */
 [data-season="summer"] {
   --season-active: var(--season-summer-primary);
   --season-active-bg: var(--season-summer-bg);
   --season-hero-gradient: var(--season-summer-gradient);
-}
-
-[data-season="summer"] .hero__bg {
-  background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80&fit=crop') center/cover no-repeat;
 }
 
 /* Fall Theme */
@@ -32,19 +24,11 @@
   --season-hero-gradient: var(--season-fall-gradient);
 }
 
-[data-season="fall"] .hero__bg {
-  background: url('https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1920&q=80&fit=crop') center/cover no-repeat;
-}
-
 /* Winter Theme */
 [data-season="winter"] {
   --season-active: var(--season-winter-primary);
   --season-active-bg: var(--season-winter-bg);
   --season-hero-gradient: var(--season-winter-gradient);
-}
-
-[data-season="winter"] .hero__bg {
-  background: url('https://huiwon7.github.io/hotel-around-pyeongchang/images/hero/hero1-1.jpg') center/cover no-repeat;
 }
 
 /* Season Selector Pills */
@@ -97,40 +81,24 @@
   transition: opacity var(--transition-normal);
 }
 
-.season-card--spring {
-  background: url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=600&q=80&fit=crop') center/cover no-repeat;
-}
-
 .season-card--spring::before {
-  background: linear-gradient(to top, rgba(200, 100, 150, 0.9) 0%, rgba(200, 100, 150, 0.3) 100%);
-  opacity: 1;
-}
-
-.season-card--summer {
-  background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80&fit=crop') center/cover no-repeat;
+  background: var(--season-spring-gradient);
+  opacity: 0.85;
 }
 
 .season-card--summer::before {
-  background: linear-gradient(to top, rgba(30, 100, 70, 0.9) 0%, rgba(30, 100, 70, 0.3) 100%);
-  opacity: 1;
-}
-
-.season-card--fall {
-  background: url('https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80&fit=crop') center/cover no-repeat;
+  background: var(--season-summer-gradient);
+  opacity: 0.85;
 }
 
 .season-card--fall::before {
-  background: linear-gradient(to top, rgba(170, 90, 50, 0.9) 0%, rgba(170, 90, 50, 0.3) 100%);
-  opacity: 1;
-}
-
-.season-card--winter {
-  background: url('https://huiwon7.github.io/hotel-around-pyeongchang/images/hero/hero1-1.jpg') center/cover no-repeat;
+  background: var(--season-fall-gradient);
+  opacity: 0.85;
 }
 
 .season-card--winter::before {
-  background: linear-gradient(to top, rgba(60, 100, 140, 0.9) 0%, rgba(60, 100, 140, 0.3) 100%);
-  opacity: 1;
+  background: var(--season-winter-gradient);
+  opacity: 0.85;
 }
 
 .season-card:hover::before {
