@@ -1,0 +1,166 @@
+/* ============================================
+   Seasonal Theme System
+   Triggered by data-season attribute on <body>
+   ============================================ */
+
+/* Spring Theme */
+[data-season="spring"] {
+  --season-active: var(--season-spring-primary);
+  --season-active-bg: var(--season-spring-bg);
+  --season-hero-gradient: var(--season-spring-gradient);
+}
+
+/* Summer Theme */
+[data-season="summer"] {
+  --season-active: var(--season-summer-primary);
+  --season-active-bg: var(--season-summer-bg);
+  --season-hero-gradient: var(--season-summer-gradient);
+}
+
+/* Fall Theme */
+[data-season="fall"] {
+  --season-active: var(--season-fall-primary);
+  --season-active-bg: var(--season-fall-bg);
+  --season-hero-gradient: var(--season-fall-gradient);
+}
+
+/* Winter Theme */
+[data-season="winter"] {
+  --season-active: var(--season-winter-primary);
+  --season-active-bg: var(--season-winter-bg);
+  --season-hero-gradient: var(--season-winter-gradient);
+}
+
+/* Season Selector Pills */
+.season-selector {
+  display: flex;
+  gap: 4px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-xl);
+  padding: 4px;
+}
+
+.season-pill {
+  padding: 8px 16px;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-gray-500);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: none;
+  background: none;
+  white-space: nowrap;
+}
+
+.season-pill:hover {
+  color: var(--color-primary);
+}
+
+.season-pill.active {
+  background: var(--color-white);
+  color: var(--season-active, var(--color-accent));
+  box-shadow: var(--shadow-sm);
+}
+
+/* Season Cards in Seasons Section */
+.season-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  aspect-ratio: 3 / 4;
+}
+
+.season-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity var(--transition-normal);
+}
+
+.season-card--spring::before {
+  background: var(--season-spring-gradient);
+  opacity: 0.85;
+}
+
+.season-card--summer::before {
+  background: var(--season-summer-gradient);
+  opacity: 0.85;
+}
+
+.season-card--fall::before {
+  background: var(--season-fall-gradient);
+  opacity: 0.85;
+}
+
+.season-card--winter::before {
+  background: var(--season-winter-gradient);
+  opacity: 0.85;
+}
+
+.season-card:hover::before {
+  opacity: 0.75;
+}
+
+.season-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.season-card.active {
+  outline: 3px solid var(--season-active);
+  outline-offset: 3px;
+}
+
+.season-card__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-xl);
+  color: var(--color-white);
+}
+
+.season-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.season-card__season {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-xs);
+}
+
+.season-card__period {
+  font-size: var(--text-sm);
+  opacity: 0.9;
+  margin-bottom: var(--space-sm);
+}
+
+.season-card__desc {
+  font-size: var(--text-sm);
+  opacity: 0.85;
+  line-height: var(--leading-relaxed);
+}
+
+.season-card__highlights {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.season-card__tag {
+  padding: 4px 10px;
+  font-size: var(--text-xs);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(4px);
+}

@@ -1,0 +1,205 @@
+/* ============================================
+   Responsive Styles (Mobile First)
+   ============================================ */
+
+/* ---- Up to 480px (Small mobile) ---- */
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__desc {
+    font-size: var(--text-base);
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+
+  .testimonial-card {
+    min-width: 300px;
+  }
+
+  .booking-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Up to 768px (Tablet portrait) ---- */
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  /* Nav mobile */
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: calc(var(--nav-height) + var(--space-lg)) var(--space-lg) var(--space-lg);
+    box-shadow: var(--shadow-xl);
+    transition: right var(--transition-normal);
+    gap: var(--space-sm);
+  }
+
+  .nav__menu.open {
+    right: 0;
+  }
+
+  .nav__menu .nav__link {
+    color: var(--color-primary);
+    font-size: var(--text-base);
+    padding: var(--space-xs) 0;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__cta {
+    display: none;
+  }
+
+  .season-selector {
+    display: none;
+  }
+
+  /* Grids */
+  .intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .pricing-card--featured {
+    transform: none;
+  }
+
+  .pricing-card--featured:hover {
+    transform: translateY(-4px);
+  }
+
+  .activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weekly-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weekly-timeline::before {
+    display: none;
+  }
+
+  .accommodation-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .target-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .infra-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Season selector mobile (show in hero) */
+  .hero__season-selector {
+    display: flex;
+  }
+}
+
+/* ---- Up to 1024px (Tablet landscape) ---- */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---- 1280px+ (Large desktop) ---- */
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 var(--space-xl);
+  }
+}
+
+/* Mobile overlay when menu is open */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--z-nav) - 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
